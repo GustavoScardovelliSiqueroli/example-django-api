@@ -1,5 +1,7 @@
 from django.contrib.auth.models import Group, User
 from rest_framework import permissions, viewsets
+from knox.auth import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 from first_module.serializers import GroupSerializer, UserSerializer
 
@@ -10,7 +12,8 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
 
 
 class GroupViewSet(viewsets.ModelViewSet):
