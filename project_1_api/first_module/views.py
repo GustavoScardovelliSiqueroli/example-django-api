@@ -1,10 +1,10 @@
-from django.contrib.auth.models import Group, User
+from django.contrib.auth.models import User
 from rest_framework import permissions, viewsets
 from knox.auth import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
-from first_module.serializers import GroupSerializer, UserSerializer
+from first_module.serializers import UserSerializer
 
 
 class UserPagination(PageNumberPagination):
@@ -32,11 +32,3 @@ class UserViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(username__icontains=search_query)
         return queryset
 
-
-class GroupViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = Group.objects.all().order_by('name')
-    serializer_class = GroupSerializer
-    permission_classes = [permissions.IsAuthenticated]
