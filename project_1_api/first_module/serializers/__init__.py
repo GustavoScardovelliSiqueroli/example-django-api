@@ -1,0 +1,2 @@
+from first_module.serializers.collaborator_serializer import CollaboratorSerializer
+from first_module.serializers.user_serializer import UserSerializer

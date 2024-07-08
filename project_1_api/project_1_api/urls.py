@@ -1,14 +1,14 @@
 from django.urls import include, path
 from rest_framework import routers
 
-from first_module import views
+from first_module.views import CollaboratorViewSet
 from django.urls import path
 from knox import views as knox_views
 from knox.views import LoginView
 
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
+router.register(r'collaborators', CollaboratorViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

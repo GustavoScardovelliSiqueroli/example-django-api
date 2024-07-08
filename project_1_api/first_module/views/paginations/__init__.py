@@ -1,0 +1,1 @@
+from first_module.views.paginations.colalborator_pagination import CollaboratorPagination

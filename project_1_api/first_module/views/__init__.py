@@ -1,0 +1,1 @@
+from first_module.views.collaborator_view_set import CollaboratorViewSet
