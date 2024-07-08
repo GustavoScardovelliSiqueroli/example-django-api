@@ -1,1 +1,1 @@
-web: gunicorn NOMEDOPROJETO.wsgi --log-file -
+web: gunicorn project_1_api.wsgi --log-file -
