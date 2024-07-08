@@ -20,5 +20,5 @@ class CollaboratorViewSet(viewsets.ModelViewSet):
         queryset = super().get_queryset()
         search_query = self.request.query_params.get('search', None)
         if search_query:
-            queryset = queryset.filter(username__icontains=search_query)
+            queryset = queryset.filter(name__icontains=search_query)
         return queryset
