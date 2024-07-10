@@ -3,8 +3,8 @@ from knox.auth import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 from first_module.serializers import  CollaboratorSerializer
-from first_module.models import Collaborator 
-from first_module.views.paginations import CollaboratorPagination
+from first_module.models import Collaborator
+from .paginations.collaborator_pagination import CollaboratorPagination
 
 
 class CollaboratorViewSet(viewsets.ModelViewSet):
